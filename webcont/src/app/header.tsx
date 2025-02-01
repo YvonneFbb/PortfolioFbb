@@ -137,6 +137,9 @@ export default function Header () {
                         alt='WeChat QR Code'
                         className='w-full h-auto'
                       />
+                      <p className='font-serif text-xs md:text-sm'>
+                        WeChat ID: Yvonnefan_ZHAI
+                      </p>
                     </div>
                   )}
                 </div>
