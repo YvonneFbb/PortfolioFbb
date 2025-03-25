@@ -1,4 +1,3 @@
-// components/Header.tsx
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
@@ -32,7 +31,7 @@ export default function Header () {
   const rightItems = [
     {
       name: 'Gmail',
-      href: 'mailto:your.email@gmail.com',
+      href: 'mailto:yvonnezhai0616@gmail.com',
       icon: <Mail className='h-5 w-5 md:hidden' />,
       type: 'link'
     },
@@ -43,7 +42,7 @@ export default function Header () {
     },
     {
       name: 'Redbook',
-      href: 'https://www.xiaohongshu.com',
+      href: 'https://www.xiaohongshu.com/user/profile/5b444722f7e8b9647a4dc6af',
       icon: <Book className='h-5 w-5 md:hidden' />,
       type: 'link'
     }
@@ -57,7 +56,7 @@ export default function Header () {
           <div className='flex items-center'>
             <a
               href={leftItem.href}
-              className='relative group font-serif font-boldness-600 tracking-custom-wider text-gray-800'
+              className='relative group font-serif font-semibold tracking-custom-wider text-gray-800'
             >
               <div className='flex items-center space-x-1'>
                 {leftItem.icon}
@@ -105,7 +104,7 @@ export default function Header () {
                   {item.type === 'link' ? (
                     <a
                       href={item.href}
-                      className='group font-serif font-boldness-600 tracking-custom-wider text-gray-800 hover:text-black transition-colors'
+                      className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-black transition-colors'
                       onClick={e => {
                         if (item.name === 'Gmail') e.preventDefault()
                       }}
@@ -119,7 +118,7 @@ export default function Header () {
                   ) : (
                     <button
                       onClick={() => setShowWechat(!showWechat)}
-                      className='group font-serif font-boldness-600 tracking-custom-wider text-gray-800 hover:text-black transition-colors'
+                      className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-black transition-colors'
                     >
                       <div className='inline-flex items-center space-x-1'>
                         {item.icon}
@@ -146,7 +145,7 @@ export default function Header () {
 
                 {/* 分隔线（最后一个项目不显示） */}
                 {index !== rightItems.length - 1 && (
-                  <span className='text-gray-800 font-boldness-600 mx-2 md:mx-3 select-none'>
+                  <span className='text-gray-800 font-semibold mx-2 md:mx-3 select-none'>
                     /
                   </span>
                 )}
