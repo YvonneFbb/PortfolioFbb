@@ -1,11 +1,14 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { User, Mail, MessageSquare, Book } from 'lucide-react'
+import { User, Mail, MessageSquare, Book, ArrowLeft } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 export default function Header () {
+  const pathname = usePathname()
   const [showWechat, setShowWechat] = useState(false)
   const popoverRef = useRef<HTMLDivElement>(null)
+  const isAboutPage = pathname === '/about'
 
   // 点击外部关闭微信弹窗
   useEffect(() => {
@@ -23,9 +26,13 @@ export default function Header () {
 
   // 导航项配置
   const leftItem = {
-    name: 'About Me',
-    href: '#about',
-    icon: <User className='h-5 w-5 md:hidden' />
+    name: isAboutPage ? 'Home Page' : 'About Me',
+    href: isAboutPage ? '/' : '/about',
+    icon: isAboutPage ? (
+      <ArrowLeft className='h-5 w-5 md:hidden' />
+    ) : (
+      <User className='h-5 w-5 md:hidden' />
+    )
   }
 
   const rightItems = [
@@ -56,7 +63,7 @@ export default function Header () {
           <div className='flex items-center'>
             <a
               href={leftItem.href}
-              className='relative group font-serif font-semibold tracking-custom-wider text-gray-800'
+              className='relative group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-red-400 transition-colors'
             >
               <div className='flex items-center space-x-1'>
                 {leftItem.icon}

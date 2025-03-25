@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '@/app/globals.css'
+
+import Header from '@/components/header'
+import GlobalNav from '@/components/nav'
 
 export const metadata: Metadata = {
   title: 'Fbb Portfolio',
@@ -13,7 +16,11 @@ export default function RootLayout ({
 }>) {
   return (
     <html lang='en'>
-      <body className={`antialiased`}>{children}</body>
+      <body className='relative'>
+        <Header />
+        <GlobalNav />
+        <main className='relative z-10'>{children}</main>
+      </body>
     </html>
   )
 }

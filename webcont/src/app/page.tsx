@@ -1,12 +1,9 @@
-import Image from "next/image";
-import Header from "./header";
-import HeroSection from "./hero";
+import HeroContent from '@/components/hero'
 
-export default function Home() {
+export default function Home () {
   return (
-    <div>
-      <Header />
-      <HeroSection />
+    <div className='min-h-screen flex flex-col justify-center relative text-gray-800'>
+      <HeroContent />
     </div>
-  );
+  )
 }
