@@ -111,7 +111,7 @@ export default function Header () {
                   {item.type === 'link' ? (
                     <a
                       href={item.href}
-                      className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-black transition-colors'
+                      className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-red-400 transition-colors'
                       onClick={e => {
                         if (item.name === 'Gmail') e.preventDefault()
                       }}
@@ -120,18 +120,18 @@ export default function Header () {
                         {item.icon}
                         <span className='hidden md:inline'>{item.name}</span>
                       </div>
-                      <div className='absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full' />
+                      <div className='absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full group-hover:bg-red-400' />
                     </a>
                   ) : (
                     <button
                       onClick={() => setShowWechat(!showWechat)}
-                      className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-black transition-colors'
+                      className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-red-400 transition-colors'
                     >
                       <div className='inline-flex items-center space-x-1'>
                         {item.icon}
                         <span className='hidden md:inline'>{item.name}</span>
                       </div>
-                      <div className='absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full' />
+                      <div className='absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full group-hover:bg-red-400' />
                     </button>
                   )}
 

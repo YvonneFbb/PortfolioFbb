@@ -1,29 +1,29 @@
 // components/about.tsx 修改后的版本
 export default function About () {
   return (
-    <section className='min-h-[calc(100vh)] flex justify-center p-16 md:p-36 md:mt-12 '>
+    <section className='min-h-[calc(100vh)] flex justify-center p-8 mt-8 md:p-36 md:mt-8'>
       {/* 新增姓名标题 */}
       <div className='w-full px-4 sm:px-6 lg:px-8'>
-        <div className='mb-4 space-y-4'>
-          <h1 className='font-serif text-2xl md:text-3xl tracking-custom-wider text-left'>
+        <div className='mb-4 space-y-2'>
+          <h1 className='font-serif font-semibold text-xl md:text-2xl tracking-custom-wider text-left'>
             ZHAI YIFAN
           </h1>
-          <p className=''>
+          <p className='text-base md:text-xl'>
             CV:{' '}
-            <a className='underline' href='/CV.pdf'>
+            <a className='underline decoration-1 hover:text-red-400 transition-colors' href='/CV.pdf'>
               Yvonne's CV
             </a>
           </p>
         </div>
 
         {/* 调整后的双栏容器 */}
-        <div className='grid md:grid-cols-2 text-[#7c7c7c]'>
+        <div className='grid md:grid-cols-2 text-[#a0a0a0] gap-8'>
           {/* 左侧栏 */}
           <div className='space-y-6'>
-            <div>
-              <h2 className='font-serif text-2xl text-black'>EDUCATION</h2>
+            <div className='space-y-4'>
+              <h2 className='font-serif text-base font-bold md:font-normal md:text-xl text-[#2b2b2b] tracking-custom-wide'>EDUCATION</h2>
               {/* 研究生 */}
-              <div className=''>
+              <div className='text-sm md:text-base'>
                 <p>
                   Master's student in School ofInnovation and Design at China
                   Academy of Art, Class of 2022
@@ -35,7 +35,7 @@ export default function About () {
                 </p>
               </div>
               {/* 本科 */}
-              <div className='mt-4'>
+              <div className='mt-4 text-sm md:text-base'>
                 <p>
                   Undergraduate in School of Innovation and Design at China
                   Academy of Art, Class of 2018
@@ -44,30 +44,30 @@ export default function About () {
               </div>
             </div>
             {/* 技能 */}
-            <div>
-              <h2 className='font-serif text-2xl text-black'>
+            <div className='space-y-4'>
+              <h2 className='font-serif text-base font-bold md:text-xl md:font-normal text-[#2b2b2b] tracking-custom-wide'>
                 SKILLS & SOFTWARE
               </h2>
-              <div className=''>
+              <div className='text-sm md:text-base'>
                 <p>
                   Design Tools: Adobe Creative Suite (Photoshop, Illustrator,
-                  InDesign, After Effects), Figma. Sketch. CorelDRAW
+                  InDesign, After Effects), Figma, Sketch, CorelDRAW
                 </p>
                 <p>3D & Visualization: Blender, Rhino, Cinema 4D, KeyShot</p>
-                <p>Prototyping &U/UX: Figma, Adobe xD, Axure RP Marvel</p>
+                <p>Prototyping UI/UX: Figma, Adobe xD, Axure RP Marvel</p>
                 <p>Motion & Animation: After Effects, Principle, Lottie</p>
                 <p>Other Tools: Procreate, Canva, Miro, Notion</p>
                 <p>
                   Skills: Visual Communication, Typography, Layout Design,
-                  Branding, U//UX Design, Data Visualization, Interactive Design
+                  Branding, UI/UX Design, Data Visualization, Interactive Design
                 </p>
               </div>
             </div>
           </div>
 
           {/* 右侧栏 */}
-          <div className='space-y-6 '>
-            <h2 className='font-serif text-2xl text-black mt-12 md:mt-0'>
+          <div className='space-y-4 text-sm md:text-base'>
+            <h2 className='font-serif font-bold text-base md:font-normal md:text-xl text-[#2b2b2b] mt-12 md:mt-0 tracking-custom-wide'>
               AWARD
             </h2>
             <p>
@@ -83,7 +83,7 @@ export default function About () {
             </p>
             <p>
               The 24th Platinum Originality International University
-              StudentGraphic Design Competition, Finalist (2024)
+              Student Graphic Design Competition, Finalist (2024)
             </p>
             <p>
               2024 INNODESIGN PRIZE Global Innovative Design Competition,
