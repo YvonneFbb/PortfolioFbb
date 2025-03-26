@@ -57,7 +57,7 @@ export default function Header () {
 
   return (
     <header className='fixed top-0 inset-x-0 z-50'>
-      <nav className='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8'>
+      <nav className='max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-sm'>
         <div className='flex justify-between items-center h-16'>
           {/* 左侧 - About Me */}
           <div className='flex items-center'>

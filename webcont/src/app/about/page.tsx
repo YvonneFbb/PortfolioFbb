@@ -10,7 +10,10 @@ export default function About () {
           </h1>
           <p className='text-base md:text-xl'>
             CV:{' '}
-            <a className='underline decoration-1 hover:text-red-400 transition-colors' href='/CV.pdf'>
+            <a
+              className='underline decoration-1 hover:text-red-400 transition-colors'
+              href='/CV.pdf'
+            >
               Yvonne's CV
             </a>
           </p>
@@ -21,12 +24,16 @@ export default function About () {
           {/* 左侧栏 */}
           <div className='space-y-6'>
             <div className='space-y-4'>
-              <h2 className='font-serif text-base font-bold md:font-normal md:text-xl text-[#2b2b2b] tracking-custom-wide'>EDUCATION</h2>
+              <h2 className='font-serif text-base font-bold md:font-normal md:text-xl text-[#2b2b2b] tracking-custom-wide'>
+                EDUCATION
+              </h2>
               {/* 研究生 */}
               <div className='text-sm md:text-base'>
                 <p>
-                  Master's student in School ofInnovation and Design at China
-                  Academy of Art, Class of 2022
+                  <span className='text-[#5e5e5e]'>
+                    Master's student in School of Innovation and Design at China
+                    Academy of Art, Class of 2022
+                  </span>
                 </p>
                 <p>Mentor: Youmin Yuan, September 2022 - March 2025</p>
                 <p>
@@ -37,8 +44,11 @@ export default function About () {
               {/* 本科 */}
               <div className='mt-4 text-sm md:text-base'>
                 <p>
-                  Undergraduate in School of Innovation and Design at China
-                  Academy of Art, Class of 2018
+                  <span className='text-[#5e5e5e]'>
+                    {' '}
+                    Undergraduate in School of Innovation and Design at China
+                    Academy of Art, Class of 2018
+                  </span>
                 </p>
                 <p>First-Class Scholarship of China Academy of Art (2019)</p>
               </div>
@@ -50,16 +60,31 @@ export default function About () {
               </h2>
               <div className='text-sm md:text-base'>
                 <p>
-                  Design Tools: Adobe Creative Suite (Photoshop, Illustrator,
-                  InDesign, After Effects), Figma, Sketch, CorelDRAW
+                  <span className='text-[#5e5e5e]'>Design Tools: </span>Adobe
+                  Creative Suite (Photoshop, Illustrator, InDesign, After
+                  Effects), Figma, Sketch
                 </p>
-                <p>3D & Visualization: Blender, Rhino, Cinema 4D, KeyShot</p>
-                <p>Prototyping UI/UX: Figma, Adobe xD, Axure RP Marvel</p>
-                <p>Motion & Animation: After Effects, Principle, Lottie</p>
-                <p>Other Tools: Procreate, Canva, Miro, Notion</p>
                 <p>
-                  Skills: Visual Communication, Typography, Layout Design,
-                  Branding, UI/UX Design, Data Visualization, Interactive Design
+                  <span className='text-[#5e5e5e]'>3D & Visualization: </span>
+                  Blender, Rhino, Cinema 4D, Adobe
+                </p>
+                <p>
+                  <span className='text-[#5e5e5e]'>Prototyping UI/UX: </span>
+                  Figma
+                </p>
+                <p>
+                  <span className='text-[#5e5e5e]'>Motion & Animation: </span>
+                  After Effects
+                </p>
+                <p>
+                  <span className='text-[#5e5e5e]'>Other Tools: </span>
+                  Procreate, Notion, Office
+                </p>
+                <p>
+                  <br />
+                  <span className='text-[#5e5e5e]'>Skills: </span>Visual
+                  Communication, Digital Visualization Design, Branding
+                  UI/UX/Web Design,Typography, Layout Design
                 </p>
               </div>
             </div>
@@ -82,8 +107,8 @@ export default function About () {
               KTK Design Competition, Ul Design Category, Second Prize (2024)
             </p>
             <p>
-              The 24th Platinum Originality International University
-              Student Graphic Design Competition, Finalist (2024)
+              The 24th Platinum Originality International University Student
+              Graphic Design Competition, Finalist (2024)
             </p>
             <p>
               2024 INNODESIGN PRIZE Global Innovative Design Competition,

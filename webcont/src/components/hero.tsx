@@ -1,6 +1,7 @@
 export default function HeroContent () {
   return (
-    <div className='relative max-w-6xl mx-auto translate-x-[calc(20px)] whitespace-nowrap px-4'>
+    <div className='relative max-w-6xl mx-auto translate-x-[calc(20px)] whitespace-nowrap px-4
+    transform -translate-y-12 md:-translate-y-12'>
       {/* Designer - 左上 */}
       <div className='mb-4 md:mb-6'>
         <h2 className='font-serif text-lg md:text-2xl tracking-custom-wider font-semibold'>
