@@ -16,6 +16,23 @@ export default {
         'custom-wider': '0.25em',
         'custom-widest': '0.80em',
       },
+      keyframes: {
+        'menu-item': {
+          '0%': { 
+            opacity: '0', 
+            transform: 'translateY(20px)',
+            filter: 'blur(2px)'
+          },
+          '100%': { 
+            opacity: '1', 
+            transform: 'translateY(0)',
+            filter: 'blur(0)'
+          }
+        }
+      },
+      animation: {
+        'menu-item': 'menu-item 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards'
+      }
     }
 
   },

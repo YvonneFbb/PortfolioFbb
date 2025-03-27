@@ -1,4 +1,5 @@
-// components/about.tsx 修改后的版本
+'use client'
+
 export default function About () {
   return (
     <section className='min-h-[calc(100vh)] flex justify-center p-8 mt-8 md:p-36 md:mt-8'>

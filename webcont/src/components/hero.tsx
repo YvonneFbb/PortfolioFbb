@@ -1,3 +1,5 @@
+'use client'
+
 export default function HeroContent () {
   return (
     <div className='relative max-w-6xl mx-auto translate-x-[calc(20px)] whitespace-nowrap px-4

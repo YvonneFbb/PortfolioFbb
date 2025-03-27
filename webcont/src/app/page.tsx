@@ -1,3 +1,5 @@
+'use client'
+
 import HeroContent from '@/components/hero'
 
 export default function Home () {
