@@ -1,8 +1,8 @@
 'use client'
 
-export default function About () {
+export default function About() {
   return (
-    <section className='min-h-[calc(100vh)] flex justify-center p-8 mt-8 md:p-36 md:mt-8'>
+    <section className='relative flex justify-center p-6 md:p-36 top-10'>
       {/* 新增姓名标题 */}
       <div className='w-full px-4 sm:px-6 lg:px-8'>
         <div className='mb-4 space-y-2'>
@@ -20,8 +20,8 @@ export default function About () {
           </p>
         </div>
 
-        {/* 调整后的双栏容器 */}
-        <div className='grid md:grid-cols-2 text-[#a0a0a0] gap-8'>
+        {/* 调整后的双栏容器 - 增加最大高度和滚动功能 */}
+        <div className='grid md:grid-cols-2 text-[#a0a0a0] gap-8 max-h-[calc(70vh)] md:max-h-[calc(100vh-200px)] overflow-y-auto scrollbar-hide'>
           {/* 左侧栏 */}
           <div className='space-y-6'>
             <div className='space-y-4'>
@@ -94,7 +94,7 @@ export default function About () {
           {/* 右侧栏 */}
           <div className='space-y-4 text-sm md:text-base'>
             <h2 className='font-serif font-bold text-base md:font-normal md:text-xl text-[#2b2b2b] mt-12 md:mt-0 tracking-custom-wide'>
-              AWARD
+              AWARDS
             </h2>
             <p>
               Digital Design Category, Kunpeng Award, Shenzhen Global Design
@@ -121,6 +121,9 @@ export default function About () {
             <p>
               Motuo Orchid Cultural and Creative Design Competition, First Prize
               (2024)
+            </p>
+            <p>
+              The 24th Platinum Originality International University Student Graphic Design Competition, Multimedia Design Excellence Award（2025）
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { User, Mail, MessageSquare, Book, ArrowLeft } from 'lucide-react'
+import { User, ArrowLeft } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
 export default function Header () {
@@ -31,7 +31,8 @@ export default function Header () {
     icon: isAboutPage ? (
       <ArrowLeft className='h-5 w-5 md:hidden' />
     ) : (
-      <User className='h-5 w-5 md:hidden' />
+      // 粉色填充圆
+      <div className='h-8 w-8 rounded-full bg-[#ee839d] md:hidden'></div>
     )
   }
 
@@ -39,18 +40,15 @@ export default function Header () {
     {
       name: 'Gmail',
       href: 'mailto:yvonnezhai0616@gmail.com',
-      icon: <Mail className='h-5 w-5 md:hidden' />,
       type: 'link'
     },
     {
       name: 'Wechat',
-      icon: <MessageSquare className='h-5 w-5 md:hidden' />,
       type: 'popover'
     },
     {
       name: 'Redbook',
       href: 'https://www.xiaohongshu.com/user/profile/5b444722f7e8b9647a4dc6af',
-      icon: <Book className='h-5 w-5 md:hidden' />,
       type: 'link'
     }
   ]
@@ -100,8 +98,8 @@ export default function Header () {
             </a>
           </div>
 
-          {/* 右侧 - 社交链接 */}
-          <div className='flex items-center'>
+          {/* 右侧 - 社交链接 - 只在桌面端显示 */}
+          <div className='hidden md:flex items-center'>
             {rightItems.map((item, index) => (
               <div key={item.name} className='flex items-center'>
                 <div
@@ -116,10 +114,7 @@ export default function Header () {
                         if (item.name === 'Gmail') e.preventDefault()
                       }}
                     >
-                      <div className='inline-flex items-center space-x-1'>
-                        {item.icon}
-                        <span className='hidden md:inline'>{item.name}</span>
-                      </div>
+                      <span>{item.name}</span>
                       <div className='absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full group-hover:bg-red-400' />
                     </a>
                   ) : (
@@ -127,10 +122,7 @@ export default function Header () {
                       onClick={() => setShowWechat(!showWechat)}
                       className='group font-serif font-semibold tracking-custom-wider text-gray-800 hover:text-red-400 transition-colors'
                     >
-                      <div className='inline-flex items-center space-x-1'>
-                        {item.icon}
-                        <span className='hidden md:inline'>{item.name}</span>
-                      </div>
+                      <span>{item.name}</span>
                       <div className='absolute bottom-0 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full group-hover:bg-red-400' />
                     </button>
                   )}

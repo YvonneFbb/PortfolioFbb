@@ -42,7 +42,7 @@ const projectsList = [
   }
 ]
 
-export default function GlobalNav () {
+export default function GlobalNav() {
   const [isFullscreenMenuOpen, setIsFullscreenMenuOpen] = useState(false)
   const [currentProject, setCurrentProject] = useState(0)
   const menuRef = useRef<HTMLDivElement>(null)
@@ -57,24 +57,24 @@ export default function GlobalNav () {
 
   return (
     <>
-      <div className='fixed bottom-20 left-1/2 -translate-x-1/2 z-40 px-4'>
-        <div className='flex justify-between relative'>
+      <div className='fixed bottom-10 left-0 right-0 z-40 px-4'>
+        <div className='flex justify-between max-w-5xl mx-auto relative text-[8px] md:text-base'>
           {/* 左侧按钮 */}
           <Link
             href={projectsList[(currentProject + 6 - 1) % 6].href}
-            className='hover:text-red-400 transition-colors'
+            className='hover:text-red-400 transition-colors flex-1 max-w-[300px]'
           >
-            <div className='flex -translate-x-[130px]'>
-              <span className='inline'>
+            <div className='flex justify-end'>
+              <span className='inline mr-4'>
                 {projectsList[(currentProject + 6 - 1) % 6].name}
               </span>
             </div>
 
             {/* 装饰线 - 与头部保持一致 */}
-            <div className='absolute -bottom-[-1px] right-[350px] w-full hidden md:block'>
+            <div className='absolute -bottom-[1px] left-0 w-[calc(42vw)] md:w-[300px] md:block'>
               <svg
                 viewBox='0 0 300 15'
-                className='h-5 w-50'
+                className='h-5 w-full'
                 preserveAspectRatio='none'
               >
                 <line
@@ -102,19 +102,19 @@ export default function GlobalNav () {
           {/* 右侧按钮 */}
           <Link
             href={projectsList[(currentProject + 1) % 6].href}
-            className='hover:text-red-400 transition-colors'
+            className='hover:text-red-400 transition-colors flex-1 max-w-[300px]'
           >
-            <div className='flex translate-x-[130px]'>
-              <span className='inline'>
+            <div className='flex justify-start'>
+              <span className='inline ml-4'>
                 {projectsList[(currentProject + 1) % 6].name}
               </span>
             </div>
 
             {/* 镜像翻转装饰线 */}
-            <div className='absolute -bottom-[-1px] left-[350px] w-full hidden md:block transform scale-x-[-1]'>
+            <div className='absolute -bottom-[1px] right-0 w-[calc(42vw)] md:w-[300px] md:block scale-x-[-1]'>
               <svg
                 viewBox='0 0 300 15'
-                className='h-5 w-50'
+                className='h-5 w-full'
                 preserveAspectRatio='none'
               >
                 <line
@@ -141,10 +141,10 @@ export default function GlobalNav () {
         </div>
       </div>
 
-      {/* 右侧汉堡按钮 */}
+      {/* 右上角汉堡按钮 - 移动到右上角 */}
       <button
         onClick={() => setIsFullscreenMenuOpen(!isFullscreenMenuOpen)}
-        className='fixed right-8 top-1/2 -translate-y-1/2 z-50 group'
+        className='fixed right-8 top-6 z-50 group md:right-8 md:top-1/2 md:-translate-y-1/2'
       >
         <HamburgerIcon isActive={isFullscreenMenuOpen} />
       </button>
@@ -153,9 +153,9 @@ export default function GlobalNav () {
       {isFullscreenMenuOpen && (
         <div className='fixed inset-0 z-40 bg-white'>
           <div className='h-full flex flex-col justify-center relative'>
-            {/* 项目列表 */}
+            {/* 项目列表 - 修改移动端布局 */}
             <div
-              className='absolute left-[calc(25%)] w-full max-w-xl px-4 space-y-16'
+              className='absolute left-[calc(5%)] md:left-[calc(25%)] w-[90%] md:w-full max-w-xl px-4 space-y-8 md:space-y-16'
               style={{ top: '50%', transform: 'translateY(-50%)' }}
             >
               {projectsList.map((project, index) => (
@@ -166,20 +166,20 @@ export default function GlobalNav () {
                 >
                   <Link
                     href={project.href}
-                    className='group flex items-baseline gap-4 font-serif'
+                    className='group flex items-baseline gap-2 md:gap-4 font-serif'
                     onClick={() => setIsFullscreenMenuOpen(false)}
                   >
                     {/* 序号 */}
-                    <div className='text-gray-500 text-sm relative -top-2 group-hover:text-red-400 transition-colors'>
+                    <div className='text-gray-500 text-xs md:text-sm relative -top-1 md:-top-2 group-hover:text-red-400 transition-colors'>
                       No.{index + 1}
                     </div>
 
                     {/* 项目信息 */}
-                    <div className='group-hover:translate-x-4 transition-transform'>
-                      <h3 className='text-2xl tracking-custom-wider group-hover:text-red-400 transition-colors'>
+                    <div className='group-hover:translate-x-2 md:group-hover:translate-x-4 transition-transform'>
+                      <h3 className='text-lg md:text-2xl tracking-custom-wider group-hover:text-red-400 transition-colors'>
                         {project.name}
                       </h3>
-                      <p className='text-sm italic text-[#7c7c7c] mt-1'>
+                      <p className='text-xs md:text-sm italic text-[#7c7c7c] mt-0.5 md:mt-1'>
                         {project.description}
                       </p>
                     </div>
@@ -196,16 +196,14 @@ export default function GlobalNav () {
 
 // 独立汉堡图标组件
 const HamburgerIcon = ({ isActive }: { isActive: boolean }) => (
-  <div className='relative h-5 w-6'>
+  <div className='relative h-4 w-5 md:h-5 md:w-6'>
     <span
-      className={`absolute block h-0.5 w-full bg-current transition-all duration-300 ${
-        isActive ? 'rotate-45 top-1/2' : 'top-1'
-      }`}
+      className={`absolute block h-0.5 w-full bg-current transition-all duration-300 ${isActive ? 'rotate-45 top-1/2' : 'top-1'
+        }`}
     />
     <span
-      className={`absolute block h-0.5 w-full bg-current transition-all duration-300 ${
-        isActive ? '-rotate-45 bottom-1/2' : 'bottom-1'
-      }`}
+      className={`absolute block h-0.5 w-full bg-current transition-all duration-300 ${isActive ? '-rotate-45 bottom-1/2' : 'bottom-1'
+        }`}
     />
   </div>
 )
