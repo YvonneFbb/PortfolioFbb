@@ -93,7 +93,7 @@ export default function About() {
 
           {/* 右侧栏 */}
           <div className='space-y-4 text-sm md:text-base'>
-            <h2 className='font-serif font-bold text-base md:font-normal md:text-xl text-[#2b2b2b] mt-12 md:mt-0 tracking-custom-wide'>
+            <h2 className='font-serif font-bold text-base md:font-normal md:text-xl text-[#2b2b2b] mt-6 md:mt-0 tracking-custom-wide'>
               AWARDS
             </h2>
             <p>

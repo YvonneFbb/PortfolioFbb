@@ -1,10 +1,9 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { User, ArrowLeft } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 
-export default function Header () {
+export default function Header() {
   const pathname = usePathname()
   const [showWechat, setShowWechat] = useState(false)
   const popoverRef = useRef<HTMLDivElement>(null)
@@ -29,7 +28,30 @@ export default function Header () {
     name: isAboutPage ? 'Home Page' : 'About Me',
     href: isAboutPage ? '/' : '/about',
     icon: isAboutPage ? (
-      <ArrowLeft className='h-5 w-5 md:hidden' />
+        <svg
+          viewBox='0 0 135 15'
+          className='h-5 w-50 md:hidden'
+          preserveAspectRatio='none'
+        >
+          <line
+            x1='0'
+            y1='12'
+            x2='40'
+            y2='12'
+            stroke='currentColor'
+            strokeWidth='0.4'
+            strokeLinecap='round'
+          />
+          <line
+            x1='0'
+            y1='12'
+            x2='10'
+            y2='5'
+            stroke='currentColor'
+            strokeWidth='0.4'
+            strokeLinecap='round'
+          />
+        </svg>
     ) : (
       // 粉色填充圆
       <div className='h-8 w-8 rounded-full bg-[#ee839d] md:hidden'></div>

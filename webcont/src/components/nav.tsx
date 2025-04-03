@@ -71,31 +71,11 @@ export default function GlobalNav() {
             </div>
 
             {/* 装饰线 - 与头部保持一致 */}
-            <div className='absolute -bottom-[1px] left-0 w-[calc(42vw)] md:w-[300px] md:block'>
-              <svg
-                viewBox='0 0 300 15'
-                className='h-5 w-full'
-                preserveAspectRatio='none'
-              >
-                <line
-                  x1='2'
-                  y1='12'
-                  x2='300'
-                  y2='12'
-                  stroke='currentColor'
-                  strokeWidth='0.9'
-                  strokeLinecap='round'
-                />
-                <line
-                  x1='2'
-                  y1='12'
-                  x2='32'
-                  y2='0'
-                  stroke='currentColor'
-                  strokeWidth='0.9'
-                  strokeLinecap='round'
-                />
-              </svg>
+            <div className='absolute -bottom-[-1px] left-0 w-[calc(42vw)] md:w-[300px] md:block'>
+              <DecorativeLine
+                length={300}
+                height={15}
+              />
             </div>
           </Link>
 
@@ -111,31 +91,11 @@ export default function GlobalNav() {
             </div>
 
             {/* 镜像翻转装饰线 */}
-            <div className='absolute -bottom-[1px] right-0 w-[calc(42vw)] md:w-[300px] md:block scale-x-[-1]'>
-              <svg
-                viewBox='0 0 300 15'
-                className='h-5 w-full'
-                preserveAspectRatio='none'
-              >
-                <line
-                  x1='2'
-                  y1='12'
-                  x2='300'
-                  y2='12'
-                  stroke='currentColor'
-                  strokeWidth='0.9'
-                  strokeLinecap='round'
-                />
-                <line
-                  x1='2'
-                  y1='12'
-                  x2='32'
-                  y2='0'
-                  stroke='currentColor'
-                  strokeWidth='0.9'
-                  strokeLinecap='round'
-                />
-              </svg>
+            <div className='absolute -bottom-[-1px] right-0 w-[calc(42vw)] md:w-[300px] md:block scale-x-[-1]'>
+              <DecorativeLine
+                length={300}
+                height={15}
+              />
             </div>
           </Link>
         </div>
@@ -206,4 +166,41 @@ const HamburgerIcon = ({ isActive }: { isActive: boolean }) => (
         }`}
     />
   </div>
+)
+
+const DecorativeLine = ({
+  length = 300,
+  height = 15,
+  className = ''
+}: {
+  length?: number
+  height?: number
+  className?: string
+}) => (
+  <svg
+    viewBox={`0 0 ${length} ${height}`}
+    className={`h-5 w-full ${className}`}
+    preserveAspectRatio='none'
+  >
+    <line
+      x1='0'
+      y1={height - 1}
+      x2={length}
+      y2={height - 1}
+      stroke='currentColor'
+      strokeWidth='0.4'
+      strokeLinecap='round'
+      className='md:stroke-[0.9]'
+    />
+    <line
+      x1='0'
+      y1={height - 1}
+      x2={length * 0.2}
+      y2='0'
+      stroke='currentColor'
+      strokeWidth='0.4'
+      strokeLinecap='round'
+      className='md:stroke-[0.9]'
+    />
+  </svg>
 )
