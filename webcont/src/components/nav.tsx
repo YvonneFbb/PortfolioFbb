@@ -62,10 +62,10 @@ export default function GlobalNav() {
           {/* 左侧按钮 */}
           <Link
             href={projectsList[(currentProject + 6 - 1) % 6].href}
-            className='hover:text-red-400 transition-colors flex-1 max-w-[300px]'
+            className='text-[#6d6d6d] hover:text-red-400 transition-colors flex-1 max-w-[300px]'
           >
             <div className='flex justify-end'>
-              <span className='inline mr-4'>
+              <span className='inline mr-4 italic'>
                 {projectsList[(currentProject + 6 - 1) % 6].name}
               </span>
             </div>
@@ -82,10 +82,10 @@ export default function GlobalNav() {
           {/* 右侧按钮 */}
           <Link
             href={projectsList[(currentProject + 1) % 6].href}
-            className='hover:text-red-400 transition-colors flex-1 max-w-[300px]'
+            className='text-[#6d6d6d] hover:text-red-400 transition-colors flex-1 max-w-[300px]'
           >
             <div className='flex justify-start'>
-              <span className='inline ml-4'>
+              <span className='inline ml-4 italic'>
                 {projectsList[(currentProject + 1) % 6].name}
               </span>
             </div>
@@ -158,11 +158,11 @@ export default function GlobalNav() {
 const HamburgerIcon = ({ isActive }: { isActive: boolean }) => (
   <div className='relative h-4 w-5 md:h-5 md:w-6'>
     <span
-      className={`absolute block h-0.5 w-full bg-current transition-all duration-300 ${isActive ? 'rotate-45 top-1/2' : 'top-1'
+      className={`absolute block h-[1px] md:h-0.5 w-full bg-current transition-all duration-300 ${isActive ? 'rotate-45 top-1/2' : 'top-1'
         }`}
     />
     <span
-      className={`absolute block h-0.5 w-full bg-current transition-all duration-300 ${isActive ? '-rotate-45 bottom-1/2' : 'bottom-1'
+      className={`absolute block h-[1px] md:h-0.5 w-full bg-current transition-all duration-300 ${isActive ? '-rotate-45 bottom-1/2' : 'bottom-1'
         }`}
     />
   </div>

@@ -12,6 +12,7 @@ export default {
         serif: ['Times New Roman', 'Times', 'serif']
       },
       letterSpacing: {
+        'custom-text': '0.05em',
         'custom-wide': '0.1em',
         'custom-wider': '0.25em',
         'custom-widest': '0.80em',
