@@ -137,9 +137,9 @@ export default function SongProject() {
                                     <img
                                         src={`/song/works/${item}.png`}
                                         alt={`Work ${item}`}
-                                        className="w-32 h-32 object-contain mx-auto"
+                                        className="w-16 h-16 md:w-28 md:h-28 object-contain mx-auto"
                                     />
-                                    <p className="mt-2 text-sm md:text-base">
+                                    <p className="mt-2 text-xs md:text-base">
                                         {[
                                             'Creative Strategy',
                                             'Concept Design',
@@ -156,7 +156,7 @@ export default function SongProject() {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32 md:mt-16 md:w-[65%]">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32 mt-16 md:w-[65%]">
                     {/* 左栏 */}
                     <div>
                         <p className="md:text-xl">
@@ -174,7 +174,7 @@ export default function SongProject() {
             </div>
 
             {/* 方案区块 */}
-            <div className="min-h-[20vh] w-full bg-white p-8 md:px-32 md:py-16">
+            <div className="min-h-[20vh] w-full bg-white px-8 py-16 md:px-32 md:py-16">
                 <h2 className="font-bold text-2xl md:text-8xl mb-8">Solution</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32 md:w-[65%]">
                     {/* 左栏 */}
@@ -264,46 +264,52 @@ export default function SongProject() {
             </div>
 
             {/* 访问区块 */}
-            <div className="min-h-[5vh] w-full bg-white p-16 md:p-32">
+            <div className="min-h-[50vh] w-full bg-white p-16 md:mb-32 md:p-32 flex items-center justify-center">
                 <Link
                     href="https://www.sensedata.top/"
-                    className="group flex flex-col items-center justify-center"
+                    className="group flex flex-col items-center justify-center w-full h-full"
                 >
-                    <div className="relative">
-                        <div>
-                            <span className="block group-hover:text-red-400 transition-colors md:text-2xl font-bold">
+                    <div className="relative h-full w-full flex items-center justify-center">
+                        <div className="text-center">
+                            <span className="block group-hover:text-red-400 transition-colors md:text-2xl tracking-custom-wide font-bold hidden md:block">
                                 Visit Web
                             </span>
-                        </div>
-                        <div className="absolute -bottom-[-2px] group-hover:text-red-400 transition-colors">
-                            <svg
-                                viewBox='0 0 135 15'
-                                className='h-5 w-50 mx-auto'
-                                preserveAspectRatio='none'
-                            >
-                                <line
-                                    x1='2'
-                                    y1='12'
-                                    x2='200'
-                                    y2='12'
-                                    stroke='currentColor'
-                                    strokeWidth='0.9'
-                                    strokeLinecap='round'
-                                />
-                                <line
-                                    x1='200'
-                                    y1='25'
-                                    x2='100'
-                                    y2='5'
-                                    stroke='currentColor'
-                                    strokeWidth='0.9'
-                                    strokeLinecap='round'
-                                />
-                            </svg>
+                            {/* 桌面端装饰线 */}
+                            <div className="absolute -bottom-[-5px] group-hover:text-red-400 transition-colors hidden md:block">
+                                <svg
+                                    viewBox='0 0 135 15'
+                                    className='h-5 w-50 mx-auto'
+                                    preserveAspectRatio='none'
+                                >
+                                    <line
+                                        x1='2'
+                                        y1='12'
+                                        x2='200'
+                                        y2='12'
+                                        stroke='currentColor'
+                                        strokeWidth='1'
+                                        strokeLinecap='round'
+                                    />
+                                    <line
+                                        x1='200'
+                                        y1='25'
+                                        x2='100'
+                                        y2='5'
+                                        stroke='currentColor'
+                                        strokeWidth='1'
+                                        strokeLinecap='round'
+                                    />
+                                </svg>
+                            </div>
+                            {/* 移动端粉色圆环 */}
+                            <div className="md:hidden flex items-center justify-center w-24 h-24 rounded-full border-[1px] border-[#ee839d] transition-colors">
+                                <span className="text-sm font-bold tracking-custom-wide">Visit Web</span>
+                            </div>
                         </div>
                     </div>
                 </Link>
             </div>
+
         </div>
     )
 }
